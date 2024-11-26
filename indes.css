@@ -1,0 +1,263 @@
+.bac-img {
+  background-image: url(./logo/back-ground-4.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-attachment: fixed;
+  background-position: center top;
+  font-family: 'poppins', sans-serif;
+  background-size: cover;
+}
+
+.image_overlay {
+  background-color: rgba(0, 0, 0, 0.526);
+}
+
+.fixed-batch {
+  background-color: rgb(2, 172, 7);
+  z-index: 2;
+}
+
+.bg-body-tertiary {
+  background-color: transparent !important;
+}
+
+.logo {
+  max-width: 7rem;
+  max-height: 5.5rem;
+}
+
+.color {
+  color: #fff;
+}
+
+.viewport {
+  height: 100vh;
+}
+
+.viewport-child,
+.viewport-child-2 {
+  height: 100%;
+}
+
+/* ///////////button animations/////////////// */
+.bg-onclick,
+.bg-onclick:link,
+.bg-onclick:visited {
+  background: linear-gradient(to right, #bfeaf6, #b2dfdf);
+  margin: 0.5rem 1rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0.8rem 1.6rem;
+  display: inline-block;
+  border-radius: 1rem;
+  transition: all 0.2s;
+  position: relative;
+  border: none;
+  cursor: pointer;
+}
+
+.bg-onclick:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+
+.bg-onclick:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0 !important;
+}
+
+.bg-onclick:active,
+.bg-onclick:focus {
+  outline: none;
+  transform: translateY(-1px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+.bg-onclick--white {
+  background-color: #fff;
+  color: #777;
+}
+
+.bg-onclick--white::after {
+  background-color: #fff;
+}
+
+.bg-onclick::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 1rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.7s !important;
+}
+
+.bg-onclick--animated {
+  animation: moveInBottom 0.5s ease-out 0.75s;
+  animation-fill-mode: backwards !important;
+}
+
+/* button end  */
+.span {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 2.5rem;
+  color: #fa62dc;
+}
+
+.span-name {
+  font-size: 4.5rem;
+  color: rgb(179, 4, 4);
+}
+
+.p-content {
+  color: #fdffff;
+  font-size: 1.2rem;
+}
+
+/* animations */
+.animation {
+  position: relative;
+  animation-name: span;
+  animation-duration: 1.6s;
+  animation-iteration-count: 1;
+}
+
+@keyframes span {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+  90% {
+    transform: translateX(5%);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+.animation--down {
+  position: relative;
+  animation-name: down;
+  animation-duration: 1.6s;
+  animation-iteration-count: 1;
+}
+
+@keyframes down {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+
+  90% {
+    transform: translateY(-5%);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+.circle--rotate {
+  position: absolute;
+  border-radius: 50%;
+  border-top: solid rgb(2, 141, 248) 5px;
+  animation: rotateLine 2s linear infinite;
+  /* Rotate the line animation */
+}
+
+@keyframes rotateLine {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* end animations */
+.img {
+  max-width: 25rem;
+  border-radius: 50%;
+  margin: 1rem;
+  z-index: 1;
+  box-shadow: 5px 10px 20px 7px rgb(43, 214, 230);
+}
+
+.img:hover {
+  transform: scale(1.2) !important;
+}
+
+.technologies {
+  width: 5rem;
+}
+
+.technologies-img {
+  width: 100%;
+  height: 100%;
+}
+
+.div-boarder {
+  border: solid rgba(255, 245, 238, 0) 5px;
+  background-color: rgba(254, 252, 252, 0.441);
+  border-radius: 5px;
+}
+
+.div-boarder:hover {
+  border-color: rgba(89, 180, 250, 0.514);
+  background-color: rgb(254, 252, 252);
+  transform: scale(1.2);
+  box-shadow: rgb(101, 100, 100) 10px 10px 10px;
+}
+
+/*////////////////////////////// mediaquerys///////////////////////// */
+@media screen and (max-width: 684px) {
+  .bac-img {
+    /* background: none; */
+  }
+
+  .bmargin--mobile {
+    margin-top: 4rem;
+  }
+
+  .circle--rotate {
+    /* display: none; */
+  }
+
+  .span {
+    font-size: 1.2rem;
+  }
+
+  .span-name {
+    font-size: 2rem;
+  }
+
+  .span-1 {
+    font-size: 0.8rem;
+  }
+
+  /* .technologies{
+    margin-left:25% !important;
+  } */
+  .img {
+    max-width: 12.5rem;
+  }
+
+  .viewport-child-2 {
+    max-height: 50%;
+    /* box-sizing: content-box; */
+  }
+
+  .span-1 {
+    margin-top: 25rem;
+  }
+}
