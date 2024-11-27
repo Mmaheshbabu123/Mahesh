@@ -44,6 +44,11 @@ const technalogies = [
     name: "Bootstrap",
     data: "A front-end framework for building web pages",
   },
+  {
+    item: "./logo//nextjs-icon.png",
+    name: "NEXT JS",
+    data: "Used to devolop reusable components in html and SSR ",
+  },
 ]; 
 const typed1 = new Typed(".name-text", {
   strings: ["Full Stack Developer"],
