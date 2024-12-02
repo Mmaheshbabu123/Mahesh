@@ -49,38 +49,95 @@ const technalogies = [
     name: "NEXT JS",
     data: "Used to devolop reusable components in html and SSR ",
   },
-]; 
-const typed1 = new Typed(".name-text", {
-  strings: ["Full Stack Developer"],
-  typeSpeed: 100,
-  backSpeed: 100,
-  backDelay: 1000,
-  loop: true,
-});
+];
+
+
+
+
+function startAnimation() {
+  // Animate <h1>
+  const typedH1 = new Typed("#animated-h1", {
+    strings: ["Hello, My Name Is"], // Text for <h1>
+    typeSpeed: 100, // Typing speed
+    backSpeed: 50, // Erasing speed
+    backDelay: 1000, // Delay after typing
+    showCursor: false, // Hide cursor after typing
+    onComplete: () => {
+      // Animate <h2> after <h1>
+      const typedH2 = new Typed("#animated-h2", {
+        strings: ["Mahesh Babu Manikanti"], // Text for <h2>
+        typeSpeed: 100, // Typing speed
+        backSpeed: 50, // Erasing speed
+        backDelay: 1000, // Delay after typing
+        showCursor: false, // Hide cursor after typing
+        loop: false, // Manually loop by restarting animation
+        onComplete: () => {
+          // Restart the animation after <h2> finishes
+          setTimeout(() => {
+            document.getElementById("animated-h1").textContent = ""; // Clear <h1>
+            document.getElementById("animated-h2").textContent = ""; // Clear <h2>
+            startAnimation(); // Restart the animation
+          }, 1000); // Add a delay before restarting
+        },
+      });
+    },
+  });
+}
+
+// Start the animation
+startAnimation();
+
 window.addEventListener("load", function () {
   let x = technalogies.map(
     (item) => `<div class="col-md-2 col m-2 p-4 div-boarder">
-  <div class="technologies m-auto">
-    <img class="technologies-img" src="${item.item}" alt="${item.name}">
-  </div>
-  <div class="d-flex justify-content-center">
-    <strong class="fs-5 mt-3 ">${item.name}</strong>
-  </div>
-  <div class="d-flex justify-content-center align-items-center">
-    <span class="">${item.data}</span>
-  </div>
-</div>`
+      <div class="technologies m-auto">
+        <img class="technologies-img" src="${item.item}" alt="${item.name}">
+      </div>
+      <div class="d-flex justify-content-center">
+        <strong class="fs-5 mt-3">${item.name}</strong>
+      </div>
+      <div class="d-flex justify-content-center align-items-center">
+        <span>${item.data}</span>
+      </div>
+    </div>`
   );
-  this.document.getElementById("array").innerHTML = x;
-  // JavaScript to add the 'scrolled' class on scroll
-  window.addEventListener("scroll", function () {
-    const navbar = document.getElementById("scroll");
-    const threshold = 200;
 
-    if (window.scrollY > threshold) {
-      navbar.classList.add("animation--down");
-    } else {
-      navbar.classList.remove("animation--down");
-    }
-  });
+  // Join the array into a single string without commas and assign it to innerHTML
+  this.document.getElementById("array").innerHTML = x.join("");
+// JavaScript to add the 'scrolled' class on scroll
+window.addEventListener("scroll", function () {
+  const navbar = document.getElementById("scroll");
+  const threshold = 200;
+
+  if (window.scrollY > threshold) {
+    navbar.classList.add("animation--down");
+  } else {
+    navbar.classList.remove("animation--down");
+  }
+});
+});
+document.getElementById("aboutLink").addEventListener("click", function(event) {
+event.preventDefault();
+const aboutSection = document.getElementById("aboutus");
+aboutSection.scrollIntoView({
+  behavior: 'smooth',
+  block: 'start'
+});
+});
+document.getElementById("skillLink").addEventListener("click", function(event) {
+event.preventDefault();
+const aboutSection = document.getElementById("skilll-sections");
+aboutSection.scrollIntoView({
+  behavior: 'smooth',
+  block: 'start'
+});
+});
+
+document.getElementById("homeLink").addEventListener("click", function(event) {
+event.preventDefault();
+const aboutSection = document.getElementById("home");
+aboutSection.scrollIntoView({
+  behavior: 'smooth',
+  block: 'start'
+});
 });
